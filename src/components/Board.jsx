@@ -75,9 +75,13 @@ const Board = () => {
   ) : (
     <>
       {winner == null ? (
-        <h1 className="text-6xl text-white">Game Tied !! {winner} </h1>
+        <h1 className="md:text-6xl mobile:text-4xl text-white">
+          Game Tied !! {winner}{" "}
+        </h1>
       ) : (
-        <h1 className="text-6xl text-white">winner is : player {winner} </h1>
+        <h1 className="md:text-6xl mobile:text-4xl text-white">
+          winner is : player {winner}{" "}
+        </h1>
       )}
       <button
         className="bg-green-500 px-6 py-3 rounded text-white"

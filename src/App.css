@@ -1,0 +1,9 @@
+.game-container {
+  transition: opacity 2s;
+}
+.gameOn {
+  opacity: 1;
+}
+.gameOff {
+  opacity: 0;
+}

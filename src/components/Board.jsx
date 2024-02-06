@@ -27,6 +27,10 @@ const Board = () => {
         console.log("winner is player ", tileMark[a]);
         setIsGameOn(false);
         setWinner(tileMark[a]);
+      } else if (tileMark.every((element) => element !== null)) {
+        console.log("it's a Tie");
+        setIsGameOn(false);
+        console.log(winner);
       }
     }
   };
@@ -39,10 +43,9 @@ const Board = () => {
     console.log(index);
   };
   const handleRestart = () => {
-    console.log("working");
-
     const nullMarks = Array(tileMark.length).fill(null);
     setTileMark(nullMarks);
+    setWinner(null);
     setIsGameOn(true);
   };
 
@@ -71,7 +74,11 @@ const Board = () => {
     </div>
   ) : (
     <>
-      <h1 className="text-6xl text-white">winner is : player {winner} </h1>
+      {winner == null ? (
+        <h1 className="text-6xl text-white">Game Tied !! {winner} </h1>
+      ) : (
+        <h1 className="text-6xl text-white">winner is : player {winner} </h1>
+      )}
       <button
         className="bg-green-500 px-6 py-3 rounded text-white"
         onClick={() => handleRestart()}
